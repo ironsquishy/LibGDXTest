@@ -1,0 +1,33 @@
+
+diverimages.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+player1
+  rotate: false
+  xy: 1, 123
+  size: 218, 131
+  orig: 218, 131
+  offset: 0, 0
+  index: -1
+player2
+  rotate: false
+  xy: 221, 125
+  size: 219, 129
+  orig: 219, 129
+  offset: 0, 0
+  index: -1
+player4
+  rotate: false
+  xy: 1, 9
+  size: 220, 112
+  orig: 220, 112
+  offset: 0, 0
+  index: -1
+player3
+  rotate: false
+  xy: 223, 1
+  size: 218, 122
+  orig: 218, 122
+  offset: 0, 0
+  index: -1

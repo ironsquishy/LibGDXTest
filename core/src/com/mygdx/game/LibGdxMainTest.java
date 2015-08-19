@@ -7,26 +7,19 @@ import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
 
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.graphics.g2d.Sprite;
-import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.badlogic.gdx.math.Circle;
-import com.mygdx.game.GameEntities.Diver;
-import com.mygdx.game.SpriteHelpers.SpriteAnimation;
+import com.mygdx.game.EntityHelpers.Entity;
 import com.mygdx.game.factories.EntityFactorProducer;
 import com.mygdx.game.factories.EntityFactory;
 
 
 public class LibGdxMainTest implements Screen {
 
-	Drop mGame;
-
-	InputGameEvent mInput;
-
-	OrthographicCamera camera;
-
-	Circle circle;
-
-	Diver mDiver;
+	/**DataFields**/
+	private Drop mGame;
+	private InputGameEvent mInput;
+	private OrthographicCamera camera;
+	private Entity mDiver, mTile;
+	private static EntityFactory mEntityFactory;
 
 
 	public LibGdxMainTest (final Drop game)//Load for now
@@ -42,9 +35,10 @@ public class LibGdxMainTest implements Screen {
 		camera = new OrthographicCamera();
 		camera.setToOrtho(false, 800, 480);
 
-		EntityFactory entityFactory = EntityFactorProducer.getInstance().getDiverFactory();
+		mEntityFactory = EntityFactorProducer.getInstance().getDiverFactory();
 
-		mDiver = entityFactory.makeDiver();
+		mDiver = mEntityFactory.makeDiver();
+
 
 		Gdx.app.log("LIBGDX", "Loaded animations and fonts");
 	}

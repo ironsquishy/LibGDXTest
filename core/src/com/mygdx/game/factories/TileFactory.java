@@ -1,6 +1,7 @@
 package com.mygdx.game.factories;
 
 import com.mygdx.game.GameEntities.Diver;
+import com.mygdx.game.EntityHelpers.Entity;
 import com.mygdx.game.GameEntities.Tile;
 
 /**
@@ -13,7 +14,7 @@ public class TileFactory extends EntityFactory {
     }
 
     @Override
-    public Tile makeTiles() {
+    public Entity makeTiles() {
         return new Tile();
     }
 }

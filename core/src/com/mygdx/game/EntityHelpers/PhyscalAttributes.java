@@ -1,4 +1,4 @@
-package com.mygdx.game.GameEntities;
+package com.mygdx.game.EntityHelpers;
 
 /**
  * Created by admin on 8/18/2015.
@@ -6,4 +6,6 @@ package com.mygdx.game.GameEntities;
 public interface PhyscalAttributes {
 
     public void setPhysicsBody();
+
+    //public void setAnimationTest();
 }

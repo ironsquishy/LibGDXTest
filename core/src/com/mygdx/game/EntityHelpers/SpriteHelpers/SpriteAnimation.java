@@ -14,6 +14,7 @@ public class SpriteAnimation extends Animation {
     private float scaleY;
     private float timepassed;
     private TextureRegion textures;
+    private TextureRegion[] regions;
 
     Array<? extends TextureRegion> mKeyFrames;
 
@@ -24,6 +25,8 @@ public class SpriteAnimation extends Animation {
         super(frameDuration, keyFrames);
 
         this.mKeyFrames = keyFrames;
+
+        regions = getKeyFrames();
 
         this.scaleX = scale;
         this.scaleY = scale;
@@ -49,14 +52,28 @@ public class SpriteAnimation extends Animation {
         return textures;
     }
 
-    public float getWidth()
+    public TextureRegion getFirstTexture()
     {
-        return textures.getRegionWidth()*scaleX;
+        //regions = getKeyFrames();
+
+        return regions[0];
     }
 
-    public float getHeight()
+    public float getWidth()
     {
-        return textures.getRegionHeight()*scaleY;
+        return regions[0].getRegionWidth();
+    }
+
+    public float getHeight() {return regions[0].getRegionHeight();}
+
+    public float getScaleX()
+    {
+        return scaleX;
+    }
+
+    public float getScaleY()
+    {
+        return scaleY;
     }
 
 }

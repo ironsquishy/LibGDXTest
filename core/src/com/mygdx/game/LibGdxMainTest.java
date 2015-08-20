@@ -21,6 +21,9 @@ public class LibGdxMainTest implements Screen {
 	private Entity mDiver, mTile;
 	private static EntityFactory mEntityFactory;
 
+	private static float screenWidth;
+	private static float screenHeight;
+
 
 	public LibGdxMainTest (final Drop game)//Load for now
 	{
@@ -31,13 +34,16 @@ public class LibGdxMainTest implements Screen {
 
 		Gdx.input.setInputProcessor(mInput);
 
+		screenWidth = Gdx.graphics.getWidth();
+		screenHeight = Gdx.graphics.getHeight();
 
 		camera = new OrthographicCamera();
-		camera.setToOrtho(false, 800, 480);
+		camera.setToOrtho(false, screenWidth, screenHeight);
 
 		mEntityFactory = EntityFactorProducer.getInstance().getDiverFactory();
 
 		mDiver = mEntityFactory.makeDiver();
+
 
 
 		Gdx.app.log("LIBGDX", "Loaded animations and fonts");
@@ -55,15 +61,16 @@ public class LibGdxMainTest implements Screen {
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
 		// tell the camera to update its matrices.
+		//camera.update();
 		camera.update();
-
 		// tell the SpriteBatch to render in the
 		// coordinate system specified by the camera.
 		mGame.batch.setProjectionMatrix(camera.combined);
 
 		mGame.batch.begin();
 
-		mDiver.draw(mGame.batch, delta, 0, 420);
+		
+		mDiver.draw(mGame.batch, delta, 0, 506);
 
 		mGame.batch.end();
 
